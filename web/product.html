@@ -51,15 +51,17 @@
           <div class="card-body">
             <p class="product_description card-text"></p>
             <ul class="product-properties">
-            <li><span class="propert-name">Prijs:</span><span class="product_price"></span></li>
-      <li><span class="propert-name">Levertijd: </span><span class="product_levertijd"></span></li> 
+              <li><span class="propert-name">Prijs:</span><span class="product_price"></span></li>
+              <li><span class="propert-name">Levertijd: </span><span class="product_levertijd"></span></li> 
               <li><span class="propert-name">Voorraad: </span><span class="product_opslag"></span></li> 
- <li><span class="propert-name">Allergie: </span><span class="product_allergie"></span></li>  <li><span class="propert-name">Ratings: </span><span class="product_ratings"></span></li> 
+              <li><span class="propert-name">Allergie: </span><span class="product_allergie"></span></li>  
+              <li><span class="propert-name">Ratings: </span><span class="product_ratings"></span></li> 
               
             </ul>
             <input class="product_amount" type="number" value="1" min="1">
             <input class="product_id" type="hidden" name="id" data-json="">
-            <button class="btn btn-outline-dark shop-button" onclick="event.stopPropagation();addAmountClosestToBasket(this);$('.toast').toast('show')">🛒</button>
+            <button class="btn btn-outline-dark shop-button" 
+              onclick="event.stopPropagation();addAmountClosestToBasket(this);$('.toast').toast('show')">🛒</button>
           </div>
         </div>
       </div>
@@ -108,8 +110,11 @@
 
       })();
     </script>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-
+      J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-
+      Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-
+      wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   </body>
 </html>

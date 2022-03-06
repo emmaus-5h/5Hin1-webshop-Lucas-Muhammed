@@ -67,8 +67,8 @@ function getCategories(request, response) {
 function getProducts(request, response) {
   console.log('API ontvangt /api/products/', request.query)
   let data = []
-  const sqlOpdracht = db.prepare('SELECT products.id AS id, products.name AS name, products.description AS description, products.price AS price, ratings.name AS ratings, levertijd.levering AS levertijd, opslag.voorraad AS opslag, allergie.name AS allergie FROM products JOIN levertijd ON products.levertijd_id = levertijd.id JOIN opslag ON products.opslag_id = opslag.id JOIN allergie ON products.allergie_id = allergie.id JOIN ratings ON products.ratings_id = ratings.id ORDER BY products.name')
-  data = sqlOpdracht.all()
+  const sqlOpdracht = db.prepare('SELECT products.id AS id, products.name AS name, products.description AS              description, products.price AS price, ratings.name AS ratings, levertijd.levering AS levertijd, opslag.voorraad      AS opslag, allergie.name AS allergie FROM products JOIN levertijd ON products.levertijd_id = levertijd.id JOIN       opslag ON products.opslag_id = opslag.id JOIN allergie ON products.allergie_id = allergie.id JOIN ratings ON         products.ratings_id = ratings.id ORDER BY products.name')
+    data = sqlOpdracht.all()
   // console.log(JSON.stringify(data, null, 2))
   response.status(200).send(data)
   console.log('API verstuurt /api/products/')
@@ -77,10 +77,10 @@ function getProducts(request, response) {
 function getProductById(request, response) {
   console.log('API ontvangt /api/products/:id', request.query)
   let data = []
-  const product_id = parseInt(request.params.id)
-  const sqlOpdracht = db.prepare('SELECT products.id AS id, products.name AS name, products.description AS description, products.price AS price, ratings.name AS ratings  , levertijd.levering AS levertijd, opslag.voorraad AS opslag, allergie.name AS allergie FROM products JOIN levertijd ON products.levertijd_id = levertijd.id JOIN opslag ON products.opslag_id = opslag.id JOIN allergie ON products.allergie_id = allergie.id JOIN ratings ON products.ratings_id = ratings.id WHERE products.id = ?')
-  data = sqlOpdracht.all(product_id)
-  response.status(200).json(data[0])
+    const product_id = parseInt(request.params.id)
+    const sqlOpdracht = db.prepare('SELECT products.id AS id, products.name AS name, products.description AS              description, products.price AS price, ratings.name AS ratings  , levertijd.levering AS levertijd,                    opslag.voorraad AS opslag, allergie.name AS allergie FROM products JOIN levertijd ON products.levertijd_id =         levertijd.id JOIN opslag ON products.opslag_id = opslag.id JOIN allergie ON products.allergie_id = allergie.id       JOIN ratings ON products.ratings_id = ratings.id WHERE products.id = ?')
+      data = sqlOpdracht.all(product_id)
+      response.status(200).json(data[0])
 }
 
 /*
@@ -170,18 +170,18 @@ function checkoutOrder(request, response) {
 
   // order id maken: date + random number
   var today = new Date();
-  const orderId = today.getFullYear() + '/' + today.getMonth() + '/' + today.getDate() + '-' + String(Math.floor(Math.random() * 1000))
+  const orderId = today.getFullYear() + '/' + today.getMonth() + '/' + today.getDate() + '-' +                           String(Math.floor(Math.random() * 1000))
 
   // maak tabel met info uit database over producten uit winkelmand
   var totaalBedrag = 0;
   var articleTable = "<table>"
-  articleTable += "<tr><th>Id</th><th>Code</th><th>Naam</th><th>Prijs per stuk</th><th>Aantal</th><th>Aantal * prijs</th></tr>"
+  articleTable += "<tr><th>Id</th><th>Code</th><th>Naam</th><th>Prijs per stuk</th><th>Aantal</th><th>Aantal *           prijs</th></tr>"
   for (let i in productIds) { // herhaal voor elke index van productIds[]
     let id = productIds[i]
     const sqlOpdracht = db.prepare('SELECT * FROM products WHERE id = ?')
     row = sqlOpdracht.get(id)
     let aantalMaalPrijs = productAmounts[i] * row.price
-    articleTable += `<tr><td>${row.id}<tr><td>${row.code}</td><td>${row.name}</td><td>€ ${row.price.toFixed(2)}</td><td>${productAmounts[i]}</td><td>€ ${aantalMaalPrijs}</td></tr>`
+    articleTable += `<tr><td>${row.id}<tr><td>${row.code}</td><td>${row.name}</td><td>€ ${row.price.toFixed(2)}</td>     <td>${productAmounts[i]}</td><td>€ ${aantalMaalPrijs}</td></tr>`
     totaalBedrag += aantalMaalPrijs
   }
   articleTable += `<tr><td colspan="5">Totaal</td><td>€ ${totaalBedrag.toFixed(2)}</td><tr>`
