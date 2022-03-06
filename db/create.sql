@@ -75,6 +75,6 @@ insert into opslag (voorraad) values ('Uitverkocht');
 insert into opslag (voorraad) values ('Binnenkort');
 insert into opslag (voorraad) values ('Laatste items');
 
-insert into allergie (name) values ('geen');
-insert into allergie (name) values ('melk');
-insert into allergie (name) values ('noten');
+insert into allergie (name) values ('Geen');
+insert into allergie (name) values ('Melk');
+insert into allergie (name) values ('Noten');
