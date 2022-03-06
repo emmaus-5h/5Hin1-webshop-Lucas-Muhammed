@@ -78,7 +78,7 @@ function getProductById(request, response) {
   console.log('API ontvangt /api/products/:id', request.query)
   let data = []
   const product_id = parseInt(request.params.id)
-  const sqlOpdracht = db.prepare('SELECT products.id AS id, products.name AS name, products.description AS description, products.price AS price, ratings_id AS ratings, levertijd.levering AS levertijdopslag.voorraad AS opslag FROM products JOIN levertijd ON products.levertijd_id = levertijd.id JOIN opslag ON products.opslag_id = opslag.id WHERE products.id = ?')
+  const sqlOpdracht = db.prepare('SELECT products.id AS id, products.name AS name, products.description AS description, products.price AS price, ratings_id AS ratings, levertijd.levering AS levertijd, opslag.voorraad AS opslag FROM products JOIN levertijd ON products.levertijd_id = levertijd.id JOIN opslag ON products.opslag_id = opslag.id WHERE products.id = ?')
   data = sqlOpdracht.all(product_id)
   response.status(200).json(data[0])
 }
