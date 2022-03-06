@@ -7,11 +7,15 @@ CREATE TABLE products (
   code VARCHAR(15),
   name VARCHAR(255),
   description TEXT,
-  price NUMERIC(10, 2)
+  price NUMERIC(10, 2),
+  ratings_id INTEGER 
 );
 
-CREATE TABLE 
 
+CREATE TABLE ratings (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name VARCHAR(255) 
+);
 --
 -- populate with data
 --
@@ -22,10 +26,13 @@ CREATE TABLE
 --
 
 
-insert into products (name, description, code, price) values ('Baklava Choco', 'Baklava maar dan met chocolade voor de mensen die en chocolade en baklava lekker vinden.', '816905633-0', 20);
-insert into products (name, description, code, price) values ('Baklava Walnoot', 'Baklava maar dan met walnoten in plaats van pistashe.', '077030122-3', 21);
-insert into products (name, description, code, price) values ('Baklava Pistashe', 'Het meeste bekende van alle.', '445924201-X', 24.50);
-insert into products (name, description, code, price) values ('Baklava Sarma', 'Baklava zoals geen ander, van de turkse stad antep. Gemaakt met pistashe wrap', '693155505-7', 13.5);
-insert into products (name, description, code, price) values ('Şöbiyet', 'baklava met een lekkere romige room.', '686928463-6', 30);
-insert into products (name, description, code, price) values ('Havuç dilimi ', 'Een sensatie om van te genieten met je partner of familie op een mooie vrijdag avond.', '492662523-7', 19.50);
+insert into products (name, description, code, price, ratings_id) values ('Baklava Choco', 'Baklava maar dan met chocolade voor de mensen die en chocolade en baklava lekker vinden.', '816905633-0', 20, 1);
+insert into products (name, description, code, price, ratings_id) values ('Baklava Walnoot', 'Baklava maar dan met walnoten in plaats van pistashe.', '077030122-3', 21, 2);
+insert into products (name, description, code, price, ratings_id) values ('Baklava Pistashe', 'Het meeste bekende van alle.', '445924201-X', 24.50, 3);
+insert into products (name, description, code, price, ratings_id) values ('Baklava Sarma', 'Baklava zoals geen ander, van de turkse stad antep. Gemaakt met pistashe wrap', '693155505-7', 13.5, 2);
+insert into products (name, description, code, price, ratings_id) values ('Şöbiyet', 'baklava met een lekkere romige room.', '686928463-6', 30, 3);
+insert into products (name, description, code, price, ratings_id) values ('Havuç dilimi', 'Een sensatie om van te genieten met je partner of familie op een mooie vrijdag avond.', '492662523-7', 19.50, 2);
 
+insert into ratings (name) values ('Geweldig');
+insert into ratings (name) values ('Super lekker');
+insert into ratings (name) values ('Het is goddelijk');
