@@ -43,11 +43,13 @@ insert into products (name, description, code, price, ratings_id, levering_id) v
 insert into products (name, description, code, price, ratings_id, levering_id) values ('Şöbiyet', 'baklava met een lekkere romige room.', '686928463-6', 30, 3, 2);
 insert into products (name, description, code, price, ratings_id, levering_id) values ('Havuç dilimi', 'Een sensatie om van te genieten met je partner of familie op een mooie vrijdag avond.', '492662523-7', 19.50, 2, 1);
 
-insert into ratings (name) values ('Geweldig');
-insert into ratings (name) values ('Super lekker');
-insert into ratings (name) values ('Het is goddelijk');
+insert into ratings (name) values ('Geweldig en superior tot alle andere baklava in de wereld');
+insert into ratings (name) values ('Super lekker, yummy.');
+insert into ratings (name) values ('Het is goddelijk!');
+insert into ratings (name) values ('Mashallah super lekker.')
 
 insert into levering (leveringstijd) values ('1 week');
 insert into levering (leveringstijd) values ('2 dagen');
 insert into levering (leveringstijd) values ('1 dag');
-
+insert into levering (leveringstijd) values ('4 uur');
+insert into levering (leveringstijd) values ('12 uur');
